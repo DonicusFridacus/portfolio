@@ -1,5 +1,5 @@
 body {
-  background-color: #1e1e2f;
+  background-color: #3c3c54;
   color: #e0e0e0;
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
@@ -10,7 +10,7 @@ body {
 }
 
 header, footer {
-  background-color: #2a2a3d;
+  background-color: #454553;
   padding: 2rem 1rem;
 }
 
@@ -28,7 +28,7 @@ header, footer {
 }
 
 header h1 {
-  color: #a87ffb;
+  color: #000000;
   margin: 0;
   font-size: 2.5rem;
 }
@@ -44,7 +44,7 @@ header p {
   height: 140px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #a87ffb;
+  border: 3px solid #1aff00;
 }
 
 nav {
@@ -53,13 +53,13 @@ nav {
 
 nav a {
   margin: 0 1rem;
-  color: #c8c8ff;
+  color: #a5a5a5;
   text-decoration: none;
   font-weight: 600;
 }
 
 nav a:hover {
-  color: #a87ffb;
+  color: #787878;
 }
 
 main section {
@@ -70,7 +70,7 @@ main section {
 }
 
 h2 {
-  color: #a87ffb;
+  color: #000000;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -100,7 +100,7 @@ ul {
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: #a87ffb;
+  background-color: #929292;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -112,16 +112,16 @@ ul {
 }
 
 .btn:hover {
-  background-color: #925fe0;
+  background-color: #6d6d6d;
   transform: translateY(-3px);
 }
 
 a {
-  color: #c8c8ff;
+  color: #c9c9c9;
 }
 
 a:hover {
-  color: #a87ffb;
+  color: #7e7e7e;
 }
 
 /* Scroll Reveal Animations */
