@@ -80,6 +80,15 @@ ul {
   padding: 0;
 }
 
+#projects-carousel {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+}
+
 .carousel {
   position: relative;
   overflow: hidden;
