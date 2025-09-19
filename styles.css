@@ -80,6 +80,20 @@ ul {
   padding: 0;
 }
 
+.photo-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px; /* spacing between photos */
+  scroll-snap-type: x mandatory; /* optional smooth snapping */
+}
+
+.photo-scroll img {
+  flex: 0 0 auto;
+  width: 300px; /* adjust size */
+  border-radius: 12px;
+  scroll-snap-align: start;
+}
+
 .two-column {
   display: flex;
   justify-content: space-around;
