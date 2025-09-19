@@ -83,8 +83,9 @@ ul {
 .photo-scroll {
   display: flex;
   overflow-x: auto;
-  gap: 16px; /* spacing between photos */
+  gap: 16px;
   scroll-snap-type: x mandatory; /* optional smooth snapping */
+  scrollbar-width: none; /* Firefox */
 }
 
 .photo-scroll img {
@@ -92,6 +93,10 @@ ul {
   width: 300px; /* adjust size */
   border-radius: 12px;
   scroll-snap-align: start;
+}
+
+.photo-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 
 .two-column {
