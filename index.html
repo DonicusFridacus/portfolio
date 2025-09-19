@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jadon Maki Aguhob | Portfolio</title>
   <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -65,10 +66,14 @@
 
     <section id="projects" class="fade-in section"></section>
       <h2>Photographs</h2>
-      <div class="photo-scroll">
-        <img src="/photos/IMG_5820.JPG" alt="Photo 1">
-        <img src="/photos/IMG_6996.JPG" alt="Photo 2">
-        <img src="/photos/IMG_7019.JPG" alt="Photo 3">
+      <div class="carousel">
+        <button class="prev">❮</button>
+        <div class="carousel-track">
+          <img src="photo1.jpg" alt="1">
+          <img src="photo2.jpg" alt="2">
+          <img src="photo3.jpg" alt="3">
+        </div>
+        <button class="next">❯</button>
       </div>
     </section>
 
@@ -105,6 +110,22 @@
     faders.forEach(fader => {
       appearOnScroll.observe(fader);
     });
+
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    let index = 0;
+
+    function showSlide(i) {
+      index = (i + slides.length) % slides.length;
+      track.style.transform = `translateX(-${index * 600}px)`; // 600 = slide width
+    }
+
+    // Buttons
+    document.querySelector('.prev').onclick = () => showSlide(index - 1);
+    document.querySelector('.next').onclick = () => showSlide(index + 1);
+
+    // Autoplay
+    setInterval(() => showSlide(index + 1), 3000);
   </script>
 </body>
 </html>

@@ -80,24 +80,34 @@ ul {
   padding: 0;
 }
 
-.photo-scroll {
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 600px;  /* adjust */
+}
+
+.carousel-track {
   display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  scroll-snap-type: x mandatory; /* optional smooth snapping */
-  scrollbar-width: none; /* Firefox */
+  transition: transform 0.5s ease;
 }
 
-.photo-scroll img {
-  flex: 0 0 auto;
-  width: 300px; /* adjust size */
-  border-radius: 12px;
-  scroll-snap-align: start;
+.carousel img {
+  width: 600px;
+  flex-shrink: 0;
 }
 
-.photo-scroll::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
+.prev { left: 10px; }
+.next { right: 10px; }
 
 .two-column {
   display: flex;
