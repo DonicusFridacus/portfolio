@@ -81,11 +81,6 @@ ul {
 }
 
 .carousel {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   overflow: hidden;
   width: 600px;  /* adjust */
