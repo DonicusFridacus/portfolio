@@ -5,8 +5,11 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  text-align: center;
+  display: flex;
   overflow-x: hidden;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 header, footer {
