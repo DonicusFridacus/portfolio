@@ -84,6 +84,8 @@ ul {
   position: relative;
   overflow: hidden;
   width: 600px;  /* adjust */
+  margin: 0 auto; /* centers it horizontally */
+  justify-content: center; /* optional – keeps slides neat */
 }
 
 .carousel-track {
