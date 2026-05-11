@@ -65,7 +65,7 @@
       </div>
     </section>
 
-    <section id="projects" class="fade-in section">
+    <section id="photographs" class="fade-in section">
       <h2>Photographs</h2>
       <div class="carousel">
         <button class="prev">❮</button>
@@ -79,17 +79,58 @@
       </div>
     </section>
 
-    <section id="projects" class="fade-in section">
+    <section id="graphic-design" class="fade-in section">
       <h2>Graphic Design Work</h2>
       <div class="carousel">
         <button class="prev">❮</button>
         <div class="carousel-track">
-          <img src="/photos/Graphic Design/1.png" alt="1">
-          <img src="/photos/Graphic Design/2.png" alt="2">
-          <img src="/photos/Graphic Design/3.png" alt="3">
-          <img src="/photos/Graphic Design/4.png" alt="4">
-          <img src="/photos/Graphic Design/5.png" alt="5">
-          <img src="/photos/Graphic Design/6.png" alt="6">
+          <div class="slide">
+            <img src="/photos/Graphic Design/1.png" alt="1">
+            <div class="overlay">
+              <h3>Space as depicted with shapes</h3>
+              <p>Done in Canva</p>
+            </div>
+          </div>
+          <div class="carousel-track">
+          <div class="slide">
+            <img src="/photos/Graphic Design/2.png" alt="2">
+            <div class="overlay">
+              <h3>Eye see you</h3>
+              <p>Done in Canva</p>
+            </div>
+          </div>
+          <div class="carousel-track">
+          <div class="slide">
+            <img src="/photos/Graphic Design/3.png" alt="3">
+            <div class="overlay">
+              <h3>Anniversary Church Banner</h3>
+              <p>Done in Canva</p>
+            </div>
+          </div>
+          <div class="carousel-track">
+          <div class="slide">
+            <img src="/photos/Graphic Design/4.png" alt="4">
+            <div class="overlay">
+              <h3>Redesigned Bath Spa Landing Page</h3>
+              <p>Done in Canva</p>
+            </div>
+          </div>
+          <div class="carousel-track">
+          <div class="slide">
+            <img src="/photos/Graphic Design/5.png" alt="5">
+            <div class="overlay">
+              <h3>Page Trace</h3>
+              <p>Done in Canva</p>
+            </div>
+          </div>
+          <div class="carousel-track">
+          <div class="slide">
+            <img src="/photos/Graphic Design/6.png" alt="6">
+            <div class="overlay">
+              <h3>Simple Photoshop</h3>
+              <p>Done in Photoshop</p>
+            </div>
+          </div>
         </div>
         <button class="next">❯</button>
       </div>
@@ -97,7 +138,7 @@
 
     <section id="resume" class="fade-in section">
       <h2>Resume</h2>
-      <a class="btn" href="CV/Jadon Maki Baldoza Aguhob - CV (1).pdf" download>Download My CV</a>
+      <a class="btn" href="CV/Jadon Maki Baldoza Aguhob - General CV.pdf" download>Download My CV</a>
     </section>
 
     <section id="contact" class="fade-in section">
@@ -114,6 +155,7 @@
   </footer>
 
   <script>
+    // Fade-in animation
     const faders = document.querySelectorAll('.fade-in');
 
     const appearOnScroll = new IntersectionObserver((entries, observer) => {
@@ -129,21 +171,38 @@
       appearOnScroll.observe(fader);
     });
 
-    const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    let index = 0;
+    // Carousel functionality
+    const carousels = document.querySelectorAll('.carousel');
 
-    function showSlide(i) {
-      index = (i + slides.length) % slides.length;
-      track.style.transform = `translateX(-${index * 600}px)`; // 600 = slide width
-    }
+    carousels.forEach((carousel) => {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = carousel.querySelectorAll('img');
+      const prevBtn = carousel.querySelector('.prev');
+      const nextBtn = carousel.querySelector('.next');
 
-    // Buttons
-    document.querySelector('.prev').onclick = () => showSlide(index - 1);
-    document.querySelector('.next').onclick = () => showSlide(index + 1);
+      let index = 0;
+      const slideWidth = 600;
 
-    // Autoplay
-    setInterval(() => showSlide(index + 1), 3000);
+      function updateCarousel() {
+        track.style.transform = `translateX(-${index * slideWidth}px)`;
+      }
+
+      nextBtn.addEventListener('click', () => {
+        index = (index + 1) % slides.length;
+        updateCarousel();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        index = (index - 1 + slides.length) % slides.length;
+        updateCarousel();
+      });
+
+      // Autoplay
+      setInterval(() => {
+        index = (index + 1) % slides.length;
+        updateCarousel();
+      }, 3000);
+    });
   </script>
 </body>
 </html>
