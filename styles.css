@@ -139,8 +139,8 @@ ul {
   padding: 10px;
   cursor: pointer;
 }
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev2 { left: 10px; }
+.next2 { right: 10px; }
 
 .two-column {
   display: flex;
